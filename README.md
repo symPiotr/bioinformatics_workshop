@@ -13,11 +13,13 @@ This repository contains the list of notes and materials for the bioinformatics 
    * Working on the cluster
    * Editing text, displaying files, redirecting output
    * Searching text files - grep
+   * Modifying text - sed
    * 
 &nbsp;  
   
 ### Workshop 3. Linux command line - advanced topics
-   * Introduction: Who is attending? What the workshop is about? 
+   * screen - virtual sessions
+   * 
 &nbsp;  
   
 ### Workshop 4. Regular expressions
