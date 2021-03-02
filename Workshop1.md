@@ -48,3 +48,8 @@
    mv OldName.txt ../NewLocationAndName.txt
    mv OldPath/OldName.txt ~/NewName.txt
    ```
+   * **cp** --- copy file to a new location
+       - **cp -r** --- copy recursively, the whole file structure
+   * Wildcards: "*"* for any string of characters, "?" a single character
+   * **rm** --- removing files. Dangerous!
+   * 
