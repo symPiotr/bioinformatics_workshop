@@ -23,9 +23,11 @@
        - Makes it easy to save and replicate sequences of operations
        - Makes it easy to keep the log of operations and repeat them, perhaps on new files
        - Makes it easy to run operations on many files at once
+       - Many useful tools only exists in command-line mode
+       - It's much easier to write your own scripts with a command-line-only interface
        - Computing clusters usually use command line... you need to know it if you work with big dats!
    * Getting set up!
-       - This is platform-specific: Windows vs Mac vs Linux
+       - Software is platform-specific: Windows vs Mac vs Linux
        - Installing useful tools (Appendix 1 in the Book!): powerful text editor (Notepad++, BBEdit, or some of the alternatives!) and access to Unix/Linux command line
        - Setting up accounts on the cluster, connecting
  &nbsp;  
