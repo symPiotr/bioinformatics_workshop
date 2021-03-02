@@ -57,17 +57,18 @@
    mv OldPath/OldName.txt ~/NewName.txt
    ```
    * **cp** --- copy file to a new location. Perhaps under a new name!
-   ```
-   cp MyFile.txt ~/Project1/
-   cp Project1/MyFile.txt FileRenamed.txt
-   ```
        - **cp -r** --- copy recursively, the whole directory/file structure
-       - what are the other options?
-   * Wildcards: "*"* for any string of characters, "?" a single character
+       - what are other possible arguments?
+   ```cp MyFile.txt ~/Project1/
+   cp Project1/MyFile.txt MyFileRenamed.txt
+   cp -r Project1 Project1_copy
+   ```
+   * Wildcards: "*" for any string of characters, "?" a single character
    ```
    cp ./* NewDirectory/
-   cp Sample123_R?.fastq ~/Project1/ReadsForSample123/
-   
+   mv Sample123_R?.fastq ~/Project1/ReadsForSample123/
    ```
    * **rm** --- removing files. Dangerous - there is no "Undo", no "Trash"!
-   * 
+   * Comments - text after #!
+   ``` ls #This command lists the contents of the directory!
+   ```  
