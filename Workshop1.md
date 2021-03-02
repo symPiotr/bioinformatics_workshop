@@ -1,10 +1,10 @@
-# Workshop 1. (2nd March 2021). Introduction to bioinformatics, command line, Linux.
+# Workshop 1. (2nd March 2021). Introduction to computational biology, command line, Linux.
 
 ### 1.1. The workshop
    * Piotr - background, interests, and bioinformatics experience
    * Workshop participants - background, interests, experience, expectations
    * What the workshop is about
-       - Unofficial, informal - but a bit of a pilot for a more systematic Comp Biol training at INoŚ
+       - Unofficial, informal - but a bit of a pilot for a future more systematic Comp Biol training at INoŚ
        - Goal: teach you something useful. I assume you want to learn.
        - Contents and pace flexible, I'll adjust to your needs and interests. 
        - You don't need to attend individual classes. Drop any time. No grades or evaluations.
@@ -12,20 +12,39 @@
  &nbsp;  
    
  ### 1.2. Bioinformatics and command line
-   * Introduction: Who is attending? What the workshop is about? 
-   * Why command line?
+   * Bioinformatics vs. computational biology  
+   * Why use command line?
  
-
-
    * Connecting to your terminal
 
 ### 1.3. Linux - intro to the environment
    * **pwd** --- where are you?
-   * The 
- 
-
-   * Introduction: Who is attending? What the workshop is about? 
-   * Why command line?
-   * What is Linux? How to get started?
-   * Basic Linux commands: finding your way in the Linux environment.
-   * Files, directories/folders and paths
+   * The Linux file system: root, directories, files. Home directory (~)
+   * **ls** --- listing directory contents
+       - pointing at directories that you want listed!
+       - arguments: -l, -h, -a ...
+   * getting help about commands!
+       - **man**
+       - **--help**, **-h**
+       - Google :)
+   * **cd** --- changing directories
+   ```
+   cd Project1
+   cd ..
+   cd ./Project1/Dataset1
+   cd /home/username/Project1/Dataset1
+   cd ../Dataset2
+   cd  / cd ~
+   ```
+   * **mkdir** --- making directories
+   * **rmdir** --- removing EMPTY directories
+   * **touch** --- as a way of making empty files
+   * **mv** --- change name or move
+       - path as an extension of a filename!
+       - keep attention to syntax!
+       - relative vs. absolute path
+   ```
+   mv OldName.txt NewName.txt
+   mv OldName.txt ../NewLocationAndName.txt
+   mv OldPath/OldName.txt ~/NewName.txt
+   ```
