@@ -108,4 +108,5 @@
    * Read Chapter 1 and Chapter 4 in the book - recap what we have covered today!
    * Practice! Follow the exercises in the book, make sure you are comfortable with all material covered.
    * Make sure that you have accounts on one of the INoŚ clusters! I recommend *azor*.
+   * Send me a brief summary/example of the type of computational biology tasks that would be useful to you!
    * Read Chapter 5 in the book. During the next session, we will mostly be covering its contents.
