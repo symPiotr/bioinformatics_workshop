@@ -1,7 +1,7 @@
 # Workshop 2. (11th March 2021). Working with text files in the Linux environment
 &nbsp;  
   
-### 2.1. Working on the cluster: accessing t, copying files. htop.
+### 2.1. Working on the cluster: logging in, accessing & moving files. Etiquette. htop.
 
 Tools for logging in, copying files, etc. are platform-specific. Hopefully, everybody has managed to get them to work :)  
   
@@ -127,5 +127,6 @@ But what makes it all really useful is the ability to "pipe" commands, directing
 ### 2.8. Homework!
    * File "OTU_table.txt" contains information on the abundance of various bacterial operational taxonmic units (OTUs) in some 20 insect samples that we have sequenced; the last column contains information about taxonomy. How many OTUs there are that correspond to Gammaproteobacteria other than Sodalis?
    * File "Phorids_fastq_100_reads.fastq" some raw sequencing data for phorid flies. How many of the 100 reads contain the sequence "GCCGCGGTAA" corresponding to a conserved portion of one of the amplification files? Save them to a separate file!
+   * Re-read Chapter 5, do your exercises!
    * Read Chapter 6 of the book!
    * Remember to send me your data examples if you want us to work on them :)
