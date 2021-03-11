@@ -21,12 +21,12 @@ This repository will contain the approximate schedule and the list of notes and 
    * Getting basic stats: wc
    * Searching text files - grep
    * Pipes
-   * Modifying text - sed
    * Practical examples and exercises
 &nbsp;  
   
 ### Workshop 3 (18th March). Linux command line - advanced topics
    * screen - virtual sessions
+   * modifying text - sed
    * shell scripts
    * loops
    * Practical examples and exercises
