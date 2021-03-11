@@ -101,10 +101,31 @@ Alternatively, in some cases, you may want to use ">>", or "append" instead, whi
    ```  
 &nbsp;  
   
-### 2.6. Searching text files - grep
+### 2.7. Searching text files using grep. Pipes.
 
-### 2.7. Pipes
-
-### 2.8. Modifying text - sed
-
-Practical examples and exercises  
+**grep** is a powerful, versatile and extremely helpful tool for processing text files. It comes in many flavors - but we will start with fairly basic syntax: "grep SearchTerm SearchedFile".  
+   ```
+   grep "Eciton" Army_ant_COI_seqs.fasta
+   grep ">" Army_ant_COI_seqs.fasta   # quotation marks quite critical!
+   grep "@M01530" Phorids_fastq_100_reads.fastq > fastq_headings.txt
+   ```  
+   - there are multiple arguments that you can be very helpful! What are they?  
+   ```
+   grep -A 1 "Eciton" Army_ant_COI_seqs.fasta    # lists also N lines after each identified text string!  
+   grep -B 2 "Eciton" Army_ant_COI_seqs.fasta    # lists also N lines before those identified
+   grep -v "Eciton" Army_ant_COI_seqs.fasta      # lists lines WITHOUT the specified string
+   ```     
+&nbsp;   
+But what makes it all really useful is the ability to "pipe" commands, directing output of one as input for another. Use the "|" character to separate commands
+   ```
+   grep "Eciton" Army_ant_COI_seqs.fasta | wc -l
+   grep "Eciton" Army_ant_COI_seqs.txt | grep -v "burchellii"
+   ```  
+... and uncountable other options. Let's try some of them!  
+&nbsp;  
+  
+### 2.8. Homework!
+   * File "OTU_table.txt" contains information on the abundance of various bacterial operational taxonmic units (OTUs) in some 20 insect samples that we have sequenced; the last column contains information about taxonomy. How many OTUs there are that correspond to Gammaproteobacteria other than Sodalis?
+   * File "Phorids_fastq_100_reads.fastq" some raw sequencing data for phorid flies. How many of the 100 reads contain the sequence "GCCGCGGTAA" corresponding to a conserved portion of one of the amplification files? Save them to a separate file!
+   * Read Chapter 6 of the book!
+   * Remember to send me your data examples if you want us to work on them :)
