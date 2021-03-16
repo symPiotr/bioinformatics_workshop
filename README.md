@@ -25,8 +25,10 @@ This repository will contain the approximate schedule and the list of notes and 
 &nbsp;  
   
 ### Workshop 3 (18th March). Linux command line - advanced topics
-   * screen - virtual sessions
+   * moving files to/from the cluster
+   * downloading files - wget
    * modifying text - sed
+   * screen - virtual sessions
    * shell scripts
    * loops
    * Practical examples and exercises
