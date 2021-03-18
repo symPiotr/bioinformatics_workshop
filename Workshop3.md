@@ -109,11 +109,36 @@ cp /mnt/matrix/symbio/raw_data/20200830_MiSeq/P-SZF2Y9-5_S476_L001_R* .
 pear -f P-SZF2Y9-5_S476_L001_R1_001.fastq.gz -r P-SZF2Y9-5_S476_L001_R2_001.fastq.gz -o P_SZF2Y9_5
 ```  
   
-But you probably won't be able to do this... your bash doesn't know where to find the program!  
-```
+But you probably won't be able to do this... your bash doesn't know where to find the program! I can tell you that it resides at /mnt/matrix/symbio/bin/pear, though. Try providing the full path to the program!  
+
+Where is bash searching? Environment variable PATH contains information on all the directories where the program is searching.  
 
 ```
+echo $PATH
+echo $PATH | sed 's/:/\n/g'
+```
+Consider adding /mnt/matrix/symbio/bin/ to your path!
 
+```
+less ~/.bashrc # the system file containing all the critical information!
+export "PATH=/mnt/matrix/symbio/bin:$PATH" # that would work for the duration of the session
+
+echo "export PATH=/mnt/matrix/symbio/bin:$PATH" >> ~/.bashrc # this would permanently add the directory to your PATH
+source ~/.bashrc
+```
+
+**.bashrc** contains many other useful portions. You may not want to mess with most of them, but perhaps, explore aliases!  
+  
+&nbsp;  
+  
+
+### 3.8. Shell scripts
+
+
+
+
+&nbsp;  
+  
 ### 3.9. HOMEWORK!  
   
 * The Phorid_fastq_100_reads.fastq file contains some amplicon reads from one of the phorid libraries, in a FASTQ format. Can you convert it to a FASTA format?
