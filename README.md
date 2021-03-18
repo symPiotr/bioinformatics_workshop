@@ -24,14 +24,12 @@ This repository will contain the approximate schedule and the list of notes and 
    * Practical examples and exercises
 &nbsp;  
   
-### Workshop 3 (18th March). Linux command line - advanced topics
+### [Workshop 3 (18th March). Linux command line - advanced topics](Workshop3.md)
    * moving files to/from the cluster
-   * downloading files - wget
    * modifying text - sed
-   * screen - virtual sessions
-   * shell scripts
+   * cut, sort, uniq
+   * finding programs. $PATH. .bashrc.
    * loops
-   * Practical examples and exercises
 &nbsp;  
   
 ### Workshop 4. Regular expressions
