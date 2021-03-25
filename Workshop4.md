@@ -84,7 +84,7 @@ Capturing the search term and using it in replacements!
   
 &nbsp;  
 
-### REGEX - let's apply it to some real-life examples!
+### REGEX - let's apply it to some real-life situations!
 **Task 1. In a list of Dictyopharidae planthopper species names**,
    - let's remove authority and year of description  
    - let's truncate generic names  
@@ -102,11 +102,11 @@ Capturing the search term and using it in replacements!
 **Task 4. In the 100 phorid fastq reads dataset**,
    - let's change the format from fastq to fasta
    - how many reads contain the forward primer sequence GTGYCAGCMGCCGCGGTAA? Note ambiguous positions... check [IUPAC codes](https://www.bioinformatics.org/sms/iupac.html) for the explanation
-   - let's remove all the others!
+   - let's remove all the reads that don't have the primer!
    - let's trim from the reads the primer sequences (which can be preceded by up to three other nucleotides)
 
 **Task 5. In the Updated_cicada_collection_data.txt**,
-   - let's change the format of the collection date. It is currently "15-Dec-14" or similar; we want it to go like "2014-Dec-15".
+   - let's change the format of the collection date. It is currently "30-Dec-15" or similar; we want it to go like "2015-Dec-30".
 
 
 
