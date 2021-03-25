@@ -84,6 +84,29 @@ Capturing the search term and using it in replacements!
   
 &nbsp;  
 
+### REGEX - let's apply it to some real-life examples!
+**Task 1. In a list of Dictyopharidae planthopper species names**,
+   - let's remove authority and year of description  
+   - let's truncate generic names  
+   - let's undo previous changes, and instead, put the authority and the year of description in bracket  
+  
+**Task 2. In a list of annoyingly complicated fastq file names**,  
+   - let's truncate them to go from "A_CALKRU1_S173_L001_R1_001.fastq" to "CALKRU1_R1.fastq"  
+   - some of the samples don't have number after the six-letter species abbreviation... let's add "3" in those cases ("CALKRU_R1.fastq" ->  "CALKRU3_R1.fastq")  
+   - the list of files contains only R1 reads... let's use them to prepare a tab-delimited list of R1 and R2 reads corresponding to the same sample ("CALKRU3   CALKRU3_R1.fastq    CALKRU3_R2.fastq")  
+
+**Task 3. In the army ant COI sequence list**,
+   - let's change the sequence organization so that the sequences spread across multiple lines are always in one;
+   - let's edit sequence names so that Accession_no, Genus, Species, and Isolate are separated by underscores, everything else removed
+
+**Task 4. In the 100 phorid fastq reads dataset**,
+   - let's change the format from fastq to fasta
+   - how many reads contain the forward primer sequence GTGYCAGCMGCCGCGGTAA? Note ambiguous positions... check [IUPAC codes](https://www.bioinformatics.org/sms/iupac.html) for the explanation
+   - let's remove all the others!
+   - let's trim from the reads the primer sequences (which can be preceded by up to three other nucleotides)
+
+**Task 5. In the Updated_cicada_collection_data.txt**,
+   - let's change the format of the collection date. It is currently "15-Dec-14" or similar; we want it to go like "2014-Dec-15".
 
 
 
