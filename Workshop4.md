@@ -49,8 +49,8 @@ The letters used to form wildcards are case sensitive: \W, \D, \S mean just the 
   * **.** --- any character
   * **[CGTAcgta]**, **[A-Z]**  --- one of the specified characters, or characters in the range  
   * **[^CGTAcgta]**, **[^A-Z]** --- anything OTHER than characters in the range  
-  * **\*** ---  used to escape special (punctuation) characters  
-  * **\*\*** --- escaped escape :)  
+  * **\\** ---  used to escape special (punctuation) characters  
+  * **\\\\** --- escaped escape :)  
   
 We often want to search for multiple characters of the same type, like, multiple "A" characters!  
   * **A** --- searching for one A :)
