@@ -32,7 +32,7 @@ This repository will contain the approximate schedule and the list of notes and 
    * loops
 &nbsp;  
   
-### Workshop 4. Regular expressions
+### [Workshop 4 (25th March). Regular expressions](Workshop4.md)
    * What are regular expressions? Why and how to use them?
    * Basic syntax
    * More advanced syntax :)
