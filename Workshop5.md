@@ -1,39 +1,36 @@
-#### regular expressions ######
+# Workshop 5 (1st April 2021). Getting deeper into regular expressions!
 
-[ACGTacgt], [0-9], [A\n] - match to either of the characters within square brackets;
-[AT]{6,} - a series of not less than six characters listed within brackets; in this case, "AATATATT" or "AAAAATTTT" would both match!
-[^XYZ] - a series of any characters other than those listed within the bracket after the ^ character;
- 
-I - "or" character: 
+### 5.1 Last week's REGEX exercises: how did you do?
 
-[A]{6,}|[T]{6,} - a series of not less than six As or of not less than six Ts
+### 5.2 regular expressions: recap of some more complicated options, and some new ones :)
 
-[A\n]{6,}|[T\n]{6,} - a series of not less than six (A or \n) or of not less than six (T or \n)... potentially helpful when our sequence is broken across lines!
+[ACGTacgt], [0-9], [A\n] - match to either of the characters within square brackets;  
+  
+[AT]{6,} - a series of not less than six characters listed within brackets; in this case, "AATATATT" or "AAAAATTTT" would both match!  
+  
+[^XYZ] - a series of any characters other than those listed within the bracket after the ^ character;  
+  
+**| - "or" character:**  
+[A]{6,}|[T]{6,} - a series of not less than six As OR of not less than six Ts.  
 
- 
+[A\n]{6,}|[T\n]{6,} - a series of not less than six (A or \n) or of not less than six (T or \n)... potentially helpful when our sequence is broken across lines!  
+  
+(AT){3,} - a series of not less than three "AT" repeats: "ATATAT" would work, "AATTAATT" wouldn't!  
+  
+&nbsp;  
+  
+### 5.3 Using REGEX within grep
 
-(AT){3,} - a series of not less than three "AT" repeats: "ATATAT" would work, "AATTAATT" wouldn't!
-
- 
-
-######  grep ######
-
-grep is a command-line utility for searching plain-text data sets for lines that match a regular expression. Its name comes from the ed command g/re/p (globally search for a regular expression and print matching lines), which has the same effect.
+As you remember, grep is a command-line utility for searching plain-text data sets for lines that match a regular expression. Its name comes from the ed command g/re/p (globally search for a regular expression and print matching lines), which has the same effect.
 
 Good tutorial --- https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/
 
-Standard help --- type "man grep"
-
-
-I will skip the basic syntax. Read the tutorial!
-Let's move to more exciting stuff - REGEX. The command-line version of grep uses slightly different
-
-syntax than the regular expressions available in TextWrangler. For instance, most versions of grep don't understand
-\d, so you will need to specify the range [0-9] instead. The man file for grep explains some of the
-command-specific syntax, and you can consult it if something doesn't work as expected.
+Standard help --- type "man grep". But you know the basic syntax already!  
+  
+Let's move to more exciting stuff - REGEX.  
+The command-line version of grep uses slightly different syntax than the regular expressions available in TextWrangler. For instance, most versions of grep don't understand \d, so you will need to specify the range [0-9] instead. The man file for grep explains some of the command-specific syntax, and you can consult it if something doesn't work as expected.
  
 # To use full regular expressions, use:
-
 
 grep -E = egrep
 
