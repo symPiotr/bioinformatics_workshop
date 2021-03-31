@@ -31,8 +31,8 @@
     - Be aware of that!  
   
 ### REGEX - Regular Expressions: a widespread language for search and replace
-Permit complex text manipulations across a wide range of environments using one skill set!  
-Easiest to get started in your REGEX-compatible text editor :)  
+REGEX permits complex text manipulations across a wide range of environments using one skill set  
+The easiest way is to get started in your REGEX-compatible text editor :)  
 
 You can do basic search-replace in almost any text-editing software:
   * Find: A     ---> Replace: B  
@@ -40,7 +40,7 @@ You can do basic search-replace in almost any text-editing software:
     
 &nbsp;  
   
-**But you can go so far beyond once you learn how to use wildcards and special characters in REGEX!**  
+**But you can go so much further once you learn how to use wildcards and special characters in REGEX!**  
   * **\w** --- any letter (A-z) or digit (0-9) and the underscore character (_).  
   * **\d** --- any digit (0-9).  
   * **\t**, **\r**, **\n** --- whitespace characters
@@ -85,6 +85,8 @@ Capturing the search term and using it in replacements!
 &nbsp;  
 
 ### REGEX - let's apply it to some real-life situations!
+We will start during the class, and try to get as far as we can. Try to resolve the remaining examples as **homework**!
+
 **Task 1. In a list of Dictyopharidae planthopper species names**,
    - let's remove authority and year of description  
    - let's truncate generic names  
