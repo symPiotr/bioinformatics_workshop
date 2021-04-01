@@ -29,38 +29,39 @@ But let's move to more exciting stuff - REGEX.
 The command-line version of grep uses slightly different syntax than the regular expressions available in TextWrangler. For instance, most versions of grep don't understand \d, so you will need to specify the range [0-9] instead. The man file for grep explains some of the command-specific syntax, and you can consult it if something doesn't work as expected.  
 
 **grep** understand with three different versions of regular expressions:
-basic (BRE) - default
-extended (ERE)
-perl (PCRE)
+   * basic (BRE) - default
+   * extended (ERE)
+   * perl (PCRE)
 
-In BRE, special characters that we have learnt about: *?, +, {, |, (,* and *)* lose their special meaning; instead use the backslashed versions \?, \+, \{, \|, \(, and \).  
-PCRE contains some additional options and different rules relative to what we have learnt.
-ERE is the closest to what we have learnt. To avoid confusion, I recommend defaulting to ERE!  
+In **BRE**, special characters that we have learnt about: *?, +, {, |, (,* and *)* lose their special meaning; instead use the backslashed versions \?, \+, \{, \|, \(, and \).  
+**PCRE** contains some additional options and different rules relative to what we have learnt.
+**ERE** is the closest to what we have learnt. To avoid confusion, I recommend defaulting to ERE!  
 
 To use extended regular expressions, use:
-`grep -E` or 
-`egrep`
+`grep -E` or `egrep`
 
 How to identify labels such as PL123 in the collection of army ant COI sequences?
-`egrep PL\d+" Piotr_army_ant_COI_sequences.fasta` --- works on my Mac, but not on our cluster! Remember that \d is not routinely recognized, use [0-9] instead!  
-
-`egrep "PL[0-9]+" Piotr_army_ant_COI_sequences.fasta` --- now it works on the cluster! If we used BRE (grep), it wouldn't have.
- 
-**Remember that you can grep/egrep within pipelines --- use | to pipe the output of one command to another command, including head, tail, wc, grep...**
-`grep "Eciton" Piotr_army_ant_COI_sequences.fasta | wc -l`
-`egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | egrep "PL[0-9]+"`
-   ** ---> This uses egrep to extract lines containing search term "Eciton" or "Labidus", and the output is directed to egrep to extract lines with strain label starting with PL [followed by digits].**
+`egrep PL\d+" Piotr_army_ant_COI_sequences.fasta`  
+--- this works on my Mac, but not on our cluster! Remember that \d is not routinely recognized, use [0-9] instead!    
+`egrep "PL[0-9]+" Piotr_army_ant_COI_sequences.fasta`  
+  --- now it works on the cluster! If we used BRE (grep), it wouldn't have.  
+   
+Remember that you can grep/egrep within pipelines --- use | to pipe the output of one command to another command, including head, tail, wc, grep...  
+`
+grep "Eciton" Piotr_army_ant_COI_sequences.fasta | wc -l
+egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | egrep "PL[0-9]+"
+`  
   
   &nbsp;  
     
 ### 5.4 Using REGEX within sed
  
-grep is not useful for text replacement in the command line, though. There are other programs that can do that using a variant of REGEX, but the two most powerful have somewhat complicated syntax.  
+**grep** is not useful for text replacement in the command line, though. There are other programs that can do that using a variant of REGEX, but the two most powerful have somewhat complicated syntax.  
   
 `tr`  is a relatively simple text-edit tool.  
 `awk` is yet another, powerful text editing tool, but with much more complicated syntax. Read about it at your own risk!  
   
-**sed with the "s" command** is simpler. You know it already :) Again, basic syntax ---  
+**sed with the "s" command** may be a good balance between simplicity and utiity! And you know it already :) Again, basic syntax ---  
 `sed 's/old_term/new_term/g' old_file.txt > new_file.txt`
   
 Examples ---  
