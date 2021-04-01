@@ -39,7 +39,7 @@ This repository will contain the approximate schedule and the list of notes and 
    * Practical examples and exercises
 &nbsp;  
   
-### [Workshop 5. Regular expressions in the Linux environment](Workshop5.md)
+### [Workshop 5 (1st April). Regular expressions in the Linux environment](Workshop5.md)
    * Using REGEX with grep in the command line
    * Using REGEX with sed in the command line
    * Exercises :)
