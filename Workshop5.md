@@ -22,63 +22,81 @@
 ### 5.3 Using REGEX within grep
 
 As you remember, grep is a command-line utility for searching plain-text data sets for lines that match a regular expression. Its name comes from the ed command g/re/p (globally search for a regular expression and print matching lines), which has the same effect.
-
-Good tutorial --- https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/
-
 Standard help --- type "man grep". But you know the basic syntax already!  
+Good tutorial --- https://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/ 
   
-Let's move to more exciting stuff - REGEX.  
-The command-line version of grep uses slightly different syntax than the regular expressions available in TextWrangler. For instance, most versions of grep don't understand \d, so you will need to specify the range [0-9] instead. The man file for grep explains some of the command-specific syntax, and you can consult it if something doesn't work as expected.
- 
-# To use full regular expressions, use:
+But let's move to more exciting stuff - REGEX.  
+The command-line version of grep uses slightly different syntax than the regular expressions available in TextWrangler. For instance, most versions of grep don't understand \d, so you will need to specify the range [0-9] instead. The man file for grep explains some of the command-specific syntax, and you can consult it if something doesn't work as expected.  
 
-grep -E = egrep
+**grep** understand with three different versions of regular expressions:
+basic (BRE) - default
+extended (ERE)
+perl (PCRE)
 
- 
+In BRE, special characters that we have learnt about: *?, +, {, |, (,* and *)* lose their special meaning; instead use the backslashed versions \?, \+, \{, \|, \(, and \).  
+PCRE contains some additional options and different rules relative to what we have learnt.
+ERE is the closest to what we have learnt. To avoid confusion, I recommend defaulting to ERE!  
 
-egrep "PL\d{3}" Piotr_army_ant_COI_sequences.fasta --- identifies labels such as PL123; works on my Mac, but not on our cluster
+To use extended regular expressions, use:
+`grep -E` or 
+`egrep`
 
-egrep "PL[0-9]{3}" Piotr_army_ant_COI_sequences.fasta --- works on my Mac as well as clusters
+How to identify labels such as PL123 in the collection of army ant COI sequences?
+`egrep PL\d+" Piotr_army_ant_COI_sequences.fasta` --- works on my Mac, but not on our cluster! Remember that \d is not routinely recognized, use [0-9] instead!  
+
+`egrep "PL[0-9]+" Piotr_army_ant_COI_sequences.fasta` --- now it works on the cluster! If we used BRE (grep), it wouldn't have.
  
 # Remember that you can grep/egrep within pipelines --- use | to pipe the output of one command to another command, including head, tail, wc, grep...
-
-
-grep "Eciton" Piotr_army_ant_COI_sequences.fasta | wc -l
-
-
-egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | egrep "PL[0-9]+"
+`grep "Eciton" Piotr_army_ant_COI_sequences.fasta | wc -l`
+`egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | egrep "PL[0-9]+"`
    # ---> This uses egrep to extract lines containing search term "Eciton" or "Labidus", and the output is directed to egrep to extract lines with strain label starting with PL [followed by digits].
+  
+  &nbsp;  
+    
+### 5.4 Using REGEX within sed
  
-##############
- 
-grep is not useful for text replacement in the command line, though. There are other programs that can do that using a variant of REGEX, but both have complicated syntax
-sed is simpler. Example usage ---
- 
-egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | sed 's/Eciton/Macrosteles/g'
-   # egrep extracts all lines containing the word "Eciton" or "Labidus", and then sed replaces all instances of "Eciton" into "Macrosteles"
- 
-sed -i 's/Eciton/Macrosteles/g' Piotr_army_ant_COI_sequences.fasta
-   # in the file, replaces all instances of "Eciton" into "Macrosteles".
+grep is not useful for text replacement in the command line, though. There are other programs that can do that using a variant of REGEX, but the two most powerful have somewhat complicated syntax.  
+  
+`tr`  is a relatively simple text-edit tool.  
+`awk` is yet another, powerful text editing tool, but with much more complicated syntax. Read about it at your own risk!  
+  
+**sed with the "s" command** is simpler. You know it already :) Again, basic syntax ---  
+`sed 's/old_term/new_term/g' old_file.txt > new_file.txt`
+  
+Examples ---  
 
-More examples at https://linuxconfig.org/learning-linux-commands-sed !
-awk is another, powerful text editing tool, but with much more complicated syntax. Read about it at your own risk!
- 
-There are other useful tools for working with text files:
-cut extracts selected columns from the line. Particularly useful when working with tables!
-cut -f 1,3 --- would extract columns #1 and #3 from lines in the text. By default, it assumes that line is tab-delimited.
-cut -f 2 -d " " --- would extract column #2 from lines in the text delimited by spaces.
- 
-sort sorts lines of text
-sort -k 2  -t " " --- would sort lines of text based on the second column (lines delimited by spaces)
-sort -k 6  -t "_" -n -r --- I often used this to sort fasta headings in Spades assembler output, such as "NODE_2_length_54722_cov_10.053_ID_5528". In this case, based on the sixth column following delimitation by underscores [=coverage], assuming that this is a numeric value rather than text, and sorting in the descending order.
- 
-uniq selects unique lines in a sorted file.
- 
-Example usage of these three commands:
-grep ">" Piotr_army_ant_COI_sequences.fasta | cut -f 2,3 -d " " | sort | uniq --- lists species for which COI sequences are available in this file.... assuming the genus+species name is always represented by the 2nd and 3rd column in space-delimited lines (="words")
- 
-However, this ignores the fact that some species are labelled like this --- "Neivamyrmex sp. 2 PL-2016", so with the name split across four words (numbered 2-5). But in other sequences, words 2-5 look like this --- "Labidus praedator isolate PL039" ... Fortunately, we can use sed to remove the word "isolate" and any subsequent stuff from all lines!
+`egrep "Eciton|Labidus" Army_ant_COI_seqs.fasta | sed 's/Eciton/Macrosteles/g'`
+   -> egrep extracts all lines containing the word "Eciton" or "Labidus", and then sed replaces all instances of "Eciton" into "Macrosteles"
 
-grep ">" Piotr_army_ant_COI_headings.txt | sed 's/isolate.*//g' | cut -f 2- -d " " | sort | uniq
+`sed 's/Eciton/Macrosteles/g' Army_ant_COI_seqs.fasta > seq_names_make_no_sense.fasta`
+   -> sed replaces all instances of "Eciton" into "Macrosteles", saves the contents with new name
 
-That should provide the full list of species in the fasta file!
+`sed -i.bak 's/Eciton/Macrosteles/g' Army_ant_COI_seqs.fasta`
+   -> sed with the parameter "-i" does the replacements in the file, keeping the original version of the file as a backup, with the extension specified (here: bak).  
+  
+More examples at https://linuxconfig.org/learning-linux-commands-sed !  
+  
+&nbsp;  
+  
+To use extended regular expressions with sed, use the parameter -r or -E. Examples:  
+  
+`grep ">" Army_ant_COI_seqs.fasta | sed -r "s/(KX[0-9]+).*/\1/g"` should only keep the first portion of the heading, corresponding to KX followed by digits. All other parts of the heading are removed.  
+  
+Unfortunately, sed does not detect end-of-line characters. If needed, we can always look for a workarounds, for example removing them using `tr -d '\n'`, or temporarily replacing them into something else as a part of the pipe `tr '\n' '@'` :D Your search engine is your friend :)  
+  
+### 5.5 Exercises --- REGEX in command line! 
+  
+**OK, so how do we replace headings in the Army_ant_COI_seqs.fasta** from something like this:  
+*>KX983305.1 Eciton burchellii isolate PL041 cytochrome oxidase subunit I (COI) gene, partial cds; mitochondrial*  
+to something like this:  
+*>KX983305_Eciton_burchellii_PL041*. 
+using grep/sed alone?  
+   
+Another task: how do we convert **Phorids_fastq_100_reads.fastq** to fasta format using sed/grep?  
+  
+Another task: from the resulting fasta file, how do we only export reads containing the primer sequence GTGYCAGCMGCCGCGGTAA (preceded by up to three other nucleotides) AND at the same time, trim it?  
+  
+Have fun :) 
+
+
+
