@@ -52,8 +52,8 @@ egrep "PL[0-9]+" Piotr_army_ant_COI_sequences.fasta
    
 Remember that you can grep/egrep within pipelines --- use | to pipe the output of one command to another command, including head, tail, wc, grep...  
 `
-grep "Eciton" Piotr_army_ant_COI_sequences.fasta | wc -l  
-egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | egrep "PL[0-9]+"  
+  grep "Eciton" Piotr_army_ant_COI_sequences.fasta | wc -l
+  egrep "Eciton|Labidus" Piotr_army_ant_COI_sequences.fasta | egrep "PL[0-9]+"  
 `  
   
   &nbsp;  
