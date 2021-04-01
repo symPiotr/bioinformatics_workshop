@@ -39,8 +39,10 @@ This repository will contain the approximate schedule and the list of notes and 
    * Practical examples and exercises
 &nbsp;  
   
-### Workshop 5. Regular expressions in the Linux environment
-   * 
+### [Workshop 5. Regular expressions in the Linux environment](Workshop5.md)
+   * Using REGEX with grep in the command line
+   * Using REGEX with sed in the command line
+   * Exercises :)
 &nbsp;  
   
 ### Workshop 6 (7?). Combining shell commands, REGEX, and other bioinformatic tools
