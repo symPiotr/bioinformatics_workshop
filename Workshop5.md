@@ -90,18 +90,20 @@ To use extended regular expressions with sed, use the parameter -r or -E. Exampl
 Unfortunately, sed does not detect end-of-line characters. If needed, we can always look for a workarounds, for example removing them using `tr -d '\n'`, or temporarily replacing them into something else as a part of the pipe `tr '\n' '@'` :D Your search engine is your friend :)  
   
 ### 5.5 Exercises --- REGEX in command line! 
+
+Basically, I would like you to redo last week's exercises, but not in your text editor but in command line, using grep+sed. 
   
-**OK, so how do we replace headings in the Army_ant_COI_seqs.fasta** from something like this:  
+**How do we replace headings in the Army_ant_COI_seqs.fasta** from something like this:  
 *>KX983305.1 Eciton burchellii isolate PL041 cytochrome oxidase subunit I (COI) gene, partial cds; mitochondrial*  
 to something like this:  
-*>KX983305_Eciton_burchellii_PL041*. 
+*>KX983305_Eciton_burchellii_PL041*   
 using grep/sed alone?  
    
-Another task: how do we convert **Phorids_fastq_100_reads.fastq** to fasta format using sed/grep?  
-  
-Another task: from the resulting fasta file, how do we only export reads containing the primer sequence GTGYCAGCMGCCGCGGTAA (preceded by up to three other nucleotides) AND at the same time, trim it?  
-  
-Have fun :) 
+How do we convert **Phorids_fastq_100_reads.fastq** to fasta format using sed/grep?  
 
-
+From the resulting fasta file, **how do we only export reads containing the primer sequence** GTGYCAGCMGCCGCGGTAA (preceded by up to three other nucleotides) **AND at the same time, trim the primer**?  
+  
+And so on... Last week's homework had five tasks, and you should be able to do all of them in the command line.  
+  
+Good luck, and have fun! :) 
 
