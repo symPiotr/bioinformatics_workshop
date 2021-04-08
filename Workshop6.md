@@ -43,7 +43,14 @@ export PATH=$PATH:/your/new/path/here
 Conda is a package manager and environment manager that you use within command line environment. 
 Check [https://conda.io/projects/conda/en/latest/user-guide/getting-started.html](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html) for a tutorial!
   
-&nbsp;  
+Follow the instructions in the command prompt on how to install!
+
+```
+conda info --envs         # lists available environments
+conda activate bio        # starts bio environment
+conda deactivate          # deactivates environments
+```
+&nbsp;
   
 ### 6.4. Help with our latest sequencing data! 
 On Tuesday, we have got some 400 Gb of sequencing data, ~10,000 files... but the file organization makes it hard to work with! You can find a subset at */mnt/matrix/symbio/workshops/workshop_20210408/*.   
