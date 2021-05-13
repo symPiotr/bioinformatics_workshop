@@ -85,27 +85,31 @@ Variables, or directly input objects can be used for various types of operations
 Calling arrays in Python3:
 ```
 List1 = []   # empty dictionary
-Nucl_List = ['C', 'G', 'T', 'A']         # a list of nucleotides
+NuclList = ['C', 'G', 'T', 'A']         # a list of nucleotides
 
-Nucl_List                                # displays the list
-```
-&nbsp;  
-  
+NuclList                                # displays the list
+
 type(List1) 
-dir(List1)  `dir() function returns all properties and methods of the specified object`
-&nbsp;  
+dir(List1)       # dir() function returns all properties and methods of the specified object
+```
 
-Objects in a list are numbered
+Objects in a list are numbered - each has an index position
 
-List2[0]  `# returns object with index no. 0 as a variable... remember they are indexed 0, 1, 2 ...`
-List[1:]  `# returns objects from the indicated position onwards, as a list!`
+```
+NuclList[0]  # returns object with index no. 0 as a variable... remember they are indexed 0, 1, 2 ...
+NuclList[1:]  # returns objects from the indicated position onwards, as a list!
 &nbsp;  
   
-List_of_seqs = [['Seq1', 'ACGTT'], ['Seq2', 'CCTTT']]  `# List of lists!`
-List_of_seqs[0][1] `# from list with index no. 0, return item with index no. 1`
-List2.append("C")
+List_of_seqs = [['Seq1', 'ACGTT'], ['Seq2', 'CCTTT']] # List of lists!
+List_of_seqs[0][1]  # from list with index no. 0, return item with index no. 1
+NuclList.append("N")  
+```  
 &nbsp;  
 
+Note that string can be interpreted as a list of characters!  
+  
+&nbsp;  
+  
 ```
 Dict1 = {}  
 Dict2 = {'G': 'Guanine', 'C': 'Cytosine'}  
