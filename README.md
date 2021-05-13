@@ -45,13 +45,16 @@ This repository will contain the approximate schedule and the list of notes and 
    * Exercises :)
 &nbsp;  
   
-### Workshop 6 (7?). Combining shell commands, REGEX, and other bioinformatic tools
-   * ...
+### [Workshop 6 (8th April). Unix and REGEX in the real world](Workshop6.md)
+   * Homework
+   * Screen
+   * $PATH and .bashrc
+   * conda
 &nbsp;  
   
-### Workshop P1. Introduction to programming.  
+### [Workshop P1 (13th May). Introduction to programming](WorkshopP1.md)
    * What programming is about? Why program? What are the main categories of programming languages? What are the main concepts and terms?  
-   * What is a variable? What are variable types? What is an array? What are array types? How they work in the Python environment?
+   * Variables - types. Arrays - types. How they work in the Python environment?
    * What are loops and IF statements? How to use them in the Python environment?
 &nbsp;  
   
