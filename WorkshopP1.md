@@ -68,17 +68,17 @@ Var6 = str(Var4)
 ```
 &nbsp;  
 
-Variables, or directly input objects can be used for various types of operations - as listed in a table 7.3 in Practical Computing for Biologists book:
+Variables, or directly input objects can be used for various types of operations - as listed in a table 7.3 in Practical Computing for Biologists book:  
 <img width="458" alt="Screenshot 2021-05-13 at 07 45 53" src="https://user-images.githubusercontent.com/12505600/118083569-73ed7780-b3bf-11eb-9d86-61f7bb4550f0.png">
 &nbsp;  
   
 ### P1.4. Arrays
   
-***Two primary types:***
-**List** ---- of variables, or arrays!
+***Two primary types:***  
+1. **List** ---- of variables, or arrays!
     List of Lists!
   
-**Dictionary**  {Key: Value}   for example, {'Seq1': 'ACGT', 'Seq2': "ACCATG'}
+2. **Dictionary**  {Key: Value}   for example, {'Seq1': 'ACGT', 'Seq2': "ACCATG'}
     Dictionary of lists!
 &nbsp;  
   
