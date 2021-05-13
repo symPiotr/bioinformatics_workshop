@@ -31,10 +31,12 @@ Each variable has several attributes. First attribute - **the name**, usually a 
 &nbsp;  
   
 Second variable attiribute - "the type":  
+```
 **Integer**                        0, 1, 2, 123456, -4321  
 **Floating point (Float)**         0.12, 1.000, -123.56  
 **Boolean**                        True, False == 1, 0  
 **String**                        "Piotr", ">Seq123_456", "ACGTGTT", "123"  
+```
 &nbsp;   
   
 Third variable attiribute - "the value".  
