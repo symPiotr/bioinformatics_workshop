@@ -81,13 +81,35 @@ Considerations?  What are the necessary steps - how to break up the job into man
 >    compl_base = Complements[base]
 >    Reverse_complement += compl_base
 > ```
-
-
+> 
 > 4. Provide the final sequence to the user.
+> ```
+> print("Reverse complement: " + Reverse_complement)
+> ```
 >  
-> 5. Once you verify that the script works, foolproof your script... consider converting the input sequence into upper case (`.upper()` method), and verifying whether subsequent bases are in the 'ACGTN' set. That 
+> 5. Once you verify that the script works, foolproof your script.   
+> For example, the way we wrote it, it is going to break if we provide the sequence using small caps, or make it nonsensical ("A!B11Nhbfiudi1i93i$$"). In an anticipation of that, consider converting the input sequence into upper case (`.upper()` method), and verifying whether the bases in the sequence are all in the 'ACGTN' set!
+> 
+> 
+> 6. Also, see if you can trim down your script.
+> For example, rather than reversing the sequence and then looping through the bases of the resulting Reversed_sequence, we can read the original sequence backwards:
+> ```
+> for base in Input_seq[::-1]: ....
+> ```
+> Rather then computing, for each base, a complement and later adding that complement to the "Reverse_complement" sequence, we can immediately add the complement of each base.
+> ```
+> for base in Reversed_seq:
+>    Reverse_complement += Complements[base]
+> ```
+  
+&nbsp;   
+  
+The final script that I came up with is at [Scripts/RevCompl.py](Scripts/RevCompl.py). Remember that this is just one way of doing that job :)
+  
+&nbsp;   
+  
   
 ### P2.4. HOMEWORK! Script 2. Compute basic statistics for a user-provided sequence!
 
-The second script will compute basic statistics for a user-provided sequence: length, count of Ns, and GC%.  
+For your homework, please write a script that would compute basic statistics for a user-provided sequence: length, count of Ns, and GC%.  
   
