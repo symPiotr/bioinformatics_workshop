@@ -58,8 +58,8 @@ This repository will contain the approximate schedule and the list of notes and 
    * What are loops and IF statements? How to use them in the Python environment?
 &nbsp;  
   
-### Workshop P2. The first Python script
-   * What are the key components of a Python script?
+### [Workshop P2. The first Python script](WorkshopP2.md)
+   * What are the key components of a simple Python script?
    * How to use variables and arrays in real life?
   
 &nbsp;  
