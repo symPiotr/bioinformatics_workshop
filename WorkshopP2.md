@@ -58,21 +58,24 @@ We are going to work on the first practical case:
 Considerations?  What are the necessary steps - how to break up the job into manageable tasks?
 &nbsp;   
 > 1. Request the sequence from the user, save it as a String variable
-> ```Input_seq = input("Type your sequence: ")```  
+> ```
+> Input_seq = input("Type your sequence: ")```  
 >  
 > 2. Provide the dictionary of complementary bases, such as:
-> ```Complements = {'G': 'C', 'C': 'G', 'A': 'T', 'T': 'A', 'N': 'N'}```
+> ```
+> Complements = {'G': 'C', 'C': 'G', 'A': 'T', 'T': 'A', 'N': 'N'}```
 >  
 > 3. While reading the input sequence backwards, compute the complement, and save it! There are many ways of doing this. Let's take small steps. First, reverse the sequence:
-> ```Reversed_seq = Input_seq[::-1]```  
+> ```
+> Reversed_seq = Input_seq[::-1]```  
 > ... then create an empty Reverse_complement string:
-> ```Reverse_complement = ""```
+> ```
+> Reverse_complement = ""```  
 > ... then for each base of the reversed sequence, obtain the complement, and add it to the Reverse_complement string:
 > ```
 > for base in Reversed_seq:
 >    compl_base = Complements[base]
->    Reverse_complement += compl_base
-> ```
+>    Reverse_complement += compl_base```
 
 
 > 4. Provide the final sequence to the user.
