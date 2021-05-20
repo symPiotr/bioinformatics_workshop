@@ -17,7 +17,7 @@
 * **Code**: *Noun*: A program or a line of a program, sometimes called source code; *Verb*: The act of writing a program.   
 * **Execute/Run**: To begin and carry out the operation of a program, or a portion of a program. 
 * **Variable**: A component of a program, used to store information to be referenced and manipulated. Name matters!   
-* * **Array**: A data structure that contains a group of elements, used to organize data to facilitate sorting or searching.  
+* **Array**: A data structure that contains a group of elements, used to organize data to facilitate sorting or searching.  
 * **Arguments**: Values that are sent to a program at the time it is run.  
 * **Statement** A line of a program or script which can assign a value, do a comparison, or perform another operation.  
 * **Function**: A subprogram that can be called repeatedly to perform the same task within a program.   
