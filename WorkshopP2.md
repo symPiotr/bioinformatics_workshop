@@ -50,5 +50,5 @@ We are going to work on two scripts today.
 The first script will print a reverse-complement of a user-provided sequence.
 Let's talk about the necessary steps!  
   
-The second step will compute basic sequence statistics: length, count of Ns, and GC% in a user-provided sequence.  
+The second script will compute basic statistics for a user-provided sequence: length, count of Ns, and GC%.  
   
