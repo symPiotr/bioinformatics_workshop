@@ -44,11 +44,24 @@ print("Hello " + name + "!")
 ```  
 &nbsp;  
   
-### P2.3. Scripts that are actually useful --- how to structure your workflow?
-We are going to work on two scripts today.  
-&nbsp;  
-The first script will print a reverse-complement of a user-provided sequence.
-Let's talk about the necessary steps!  
+### P2.3. How to structure your workflow? Script 1. Reverse-complementing a user-provided nucleotide sequence!
+We are going to work on the first practical case:  
+**A script that will print a reverse-complement of a user-provided sequence.**  
+Considarations?  
+> What are the necessary steps - how to break up the job into manageable tasks?
+> 
+> 1. Request the sequence from the user, save it as a String variable
+>  
+> 2. Provide the dictionary of complementary bases, such as
+> `Complements = {'G': 'C', 'C': 'G', 'A': 'T', 'T': 'A', 'N': 'N'}`
+>  
+> 3. While reading the input sequence backwards, compute the complement, and save it! This step could be broken up into smaller, perhaps more manageable steps! There are many ways of doing this, but perhaps the easier would be 
+>  
+> 4. Provide the final sequence to the user.
+>  
+> 5. Once you verify that it all works, foolproof your script... consider converting the input sequence into upper case (`.upper()` method), and verifying whether subsequent bases are in the 'ACGTN' set. That 
   
+### P2.4. HOMEWORK! Script 2. Compute basic statistics for a user-provided sequence!
+
 The second script will compute basic statistics for a user-provided sequence: length, count of Ns, and GC%.  
   
