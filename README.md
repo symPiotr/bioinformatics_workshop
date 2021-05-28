@@ -64,3 +64,11 @@ This repository will contain the approximate schedule and the list of notes and 
   
 &nbsp;  
   
+### [Workshop P3. Python - working with files!](WorkshopP3.md)
+   * Reviewing homework. How to make your scripts more efficient?
+   * Methods to be applied on variables
+   * Input and Output files
+   * Editing sequence files - how to organize the workflow?
+  
+&nbsp;  
+    
