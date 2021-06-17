@@ -43,8 +43,17 @@ if len(sys.argv) != 3:
     sys.exit('\nThis script imports an input_file and exports an output_file. Please provide file names.\n'
 	           'Usage: ./script.py <input_file> <output_file>\n')   
 Script, path_to_input_file, path_to_output_file = sys.argv
+
+INPUT = open(path_to_input_file, "r")
+OUTPUT = open(path_to_output_file, "w")
+  
 ```  
 &nbsp;  
+
+
+
+
+
 ##### Example: sys - stopping the script when encountering unexpected characters
 ```
 for base in nucleotide_sequence:
